@@ -22,10 +22,10 @@ CONF_IRQ_PIN = "irq_pin"
 CONFIG_SCHEMA = cv.Schema(
     {
         cv.GenerateID(): cv.declare_id(DmoLabelEmulator),
-        cv.Required(CONF_SLAVE_SDA_PIN): pins.internal_gpio_pin_number({"output": True, "input": True}),
-        cv.Required(CONF_SLAVE_SCL_PIN): pins.internal_gpio_pin_number({"output": True, "input": True}),
+        cv.Required(CONF_SLAVE_SDA_PIN): pins.internal_gpio_pin_number,
+        cv.Required(CONF_SLAVE_SCL_PIN): pins.internal_gpio_pin_number,
         cv.Optional(CONF_SLAVE_ADDRESS, default=0x28): cv.hex_uint8_t,
-        cv.Required(CONF_IRQ_PIN): pins.internal_gpio_pin_number({"output": True}),
+        cv.Required(CONF_IRQ_PIN): pins.internal_gpio_pin_number,
     }
 ).extend(cv.COMPONENT_SCHEMA)
 
